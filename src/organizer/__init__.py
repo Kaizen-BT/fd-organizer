@@ -1,3 +1,3 @@
-from .organizer import Organizer
+from .Organizer import Organizer
 
 __all__ = ["Organizer"]
