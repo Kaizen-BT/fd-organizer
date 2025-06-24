@@ -18,7 +18,7 @@ using `poetry install`. This will also allow for the usage of `fd-organizer` fro
 
 ### Quick Start Summmary
 
-```shell
+```bash
 # Install pipx (refer to docs)
 # Install poetry (refer to docs)
 
@@ -29,7 +29,7 @@ poetry run fd-organizer --help
 ```
 
 ## Installation Instructions
-To install `fd-organizer` it is recommended to install it via `pipx`. Refer [here](#quick-start-summary)
+To install `fd-organizer` it is recommended to install it via `pipx`. Refer [here](quick-start-summary)
 for more information on installing `pipx`
 
 Once `pipx` is installed clone into this repository and install `fd-organizer` using
@@ -37,7 +37,7 @@ Once `pipx` is installed clone into this repository and install `fd-organizer` u
 
 ### Installation Summary
 
-```shell
+```bash
 git clone https://github.com/Kaizen-BT/fd-organizer.git
 cd fd-organizer
 pipx install .
@@ -50,12 +50,51 @@ Once `fd-organizer` is installed and available there are three commands availabl
 - `list-custom`
 - `run-custom`
 
+### `default`
+Using the `default` command in `fd-organizer` will organize a given directory based
+on the default mapping.
+
+Syntax:
+```bash
+fd-organizer default [--verbose|--no-verbose] DIRECTORY
+```
+
+### `list-custom`
+Running the `list-custom` command simple shows the custom mappings you have created in
+a neat format 
+
+Syntax:
+```bash
+fd-organizer list-custom
+```
+
+### `run-custom`
+Using the `run-custom` command requires a custom `mapper` (refer to [Adding Customizations](adding-customizations)
+for details on how to create your own `mapppers`) but is otherwise identical to the `default` command
+
+Syntax:
+```bash
+fd-organizer run-custom --custom-mapper CUSTOM-MAPPER [--verbose|--no-verbose] DIRECTORY
+```
+
 The last two above show the available custom mappers if you created your own. The following
 exapnds on creating your own mappers.
 
-## MAPPER (Quick Guide)
-A `mapper` is simply a `JSON` file that specifies what files should be stored in which directory.
-`Mappers ` are stored in a directory 
+## Adding Customizations
+
+### Mapper
+
+`Mappers` are used by `fd-organizer` to determine which directories hold what files.
+
+They are simply `JSON` files that follow a a specific format. `Mappers` are to be stored
+in a sub-directory in the users `HOME`. The directory is up to the user but must be set as
+the value to the environmental variable `FD_JSON_DIR`, i.e: `FD_JSON_DIR` is a sub-directory 
+inside the user's `HOME`. 
+
+> **Note: I am working on implementing a helper command to set the value of `FD_JSON_DIR`, but
+can be done manually for now**
+
+The following is the format that every mapper must follow:
 
 ```json
 {
@@ -68,7 +107,8 @@ A `mapper` is simply a `JSON` file that specifies what files should be stored in
 
 Where `Directory` is the directory move all files whose file-extensions are specified in the associated array.
 
-An example of a valid mapping shown below:
+An example of a valid mapping shown below and is the `Mapping` used when running `fd-organizer` using the
+`default` command:
 
 ```json
 {
