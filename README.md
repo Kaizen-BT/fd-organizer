@@ -29,7 +29,7 @@ poetry run fd-organizer --help
 ```
 
 ## Installation Instructions
-To install `fd-organizer` it is recommended to install it via `pipx`. Refer [here](quick-start-summary)
+To install `fd-organizer` it is recommended to install it via `pipx`. Refer [here](#quick-start-summary)
 for more information on installing `pipx`
 
 Once `pipx` is installed clone into this repository and install `fd-organizer` using
@@ -69,7 +69,7 @@ fd-organizer list-custom
 ```
 
 ### `run-custom`
-Using the `run-custom` command requires a custom `mapper` (refer to [Adding Customizations](adding-customizations)
+Using the `run-custom` command requires a custom `mapper` (refer to [Adding Customizations](#adding-customizations)
 for details on how to create your own `mapppers`) but is otherwise identical to the `default` command
 
 Syntax:
