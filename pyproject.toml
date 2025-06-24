@@ -6,7 +6,7 @@ authors = [
     {name = "CRUCIFIED-AM\\alenp",email = "alenpeni.info@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = [
     "typer (>=0.16.0,<0.17.0)"
 ]
@@ -20,7 +20,7 @@ packages = [
     {include = "organizer", from = "src"},
 ]
 
-[tool.poetry.scripts]
+[project.scripts]
 fd-organizer = "fd_organizer.cli:app"
 
 [build-system]
