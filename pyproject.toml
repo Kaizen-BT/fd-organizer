@@ -12,13 +12,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [
-    {include = "constants", from = "src"},
-    {include = "fd_organizer", from = "src"},
-    {include = "mapper", from = "src"},
-    {include = "mixins", from = "src"},
-    {include = "organizer", from = "src"},
-]
+packages = [{include = "fd_organizer", from = "src"},]
 
 [project.scripts]
 fd-organizer = "fd_organizer.cli:app"

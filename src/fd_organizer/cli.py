@@ -5,9 +5,9 @@ import typer
 from typing_extensions import Annotated
 from rich import print
 
-from mapper.json_mapper import JSONMapper
-from organizer import Organizer
-from constants import JSON_DIR, JSON_ENV
+from fd_organizer.mapper import JSONMapper
+from fd_organizer.organizer import Organizer
+from fd_organizer.constants import JSON_DIR, JSON_ENV
 
 # App
 app = typer.Typer()
