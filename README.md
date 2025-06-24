@@ -50,6 +50,9 @@ Once `fd-organizer` is installed and available there are three commands availabl
 - `list-custom`
 - `run-custom`
 
+The last two above show the available custom mappers if you created your own. The following
+exapnds on creating your own mappers.
+
 ### `default`
 Using the `default` command in `fd-organizer` will organize a given directory based
 on the default mapping.
@@ -76,9 +79,6 @@ Syntax:
 ```bash
 fd-organizer run-custom --custom-mapper CUSTOM-MAPPER [--verbose|--no-verbose] DIRECTORY
 ```
-
-The last two above show the available custom mappers if you created your own. The following
-exapnds on creating your own mappers.
 
 ## Adding Customizations
 
